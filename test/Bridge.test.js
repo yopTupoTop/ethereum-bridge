@@ -1,6 +1,5 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-
 describe("bridge tests", () => {
     let FunCoin;
     let funCoin;
@@ -35,4 +34,5 @@ describe("bridge tests", () => {
         funCoin.connect(address1).approve(bridge.address, 10);
         await expect(bridge.connect(address1).lock(10)).rejectedWith("ERC20: transfer amount exceeds balance");
     });
+
 });
